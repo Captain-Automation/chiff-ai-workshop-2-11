@@ -63,8 +63,9 @@ Repo must stay clean: page files only. **No secrets, no API keys, nothing about 
   Dots: https://openai.com/index/introducing-dots/ · Grok Bot: https://docs.x.ai/grok-bot/overview · Instinct: https://instinct.com/
 
 ## Approved host titles (use exactly)
-- **אשר שיף**: `Software Developer` / `Founder, Chiff AI` / and a small Hebrew line `מפתח תוכנה`
+- **אשר שיף**: `Software Developer` / `Founder, Chiff AI`
 - **חיים אבלס**: `Software Tech Lead` / `Software Development Lecturer`
+- Hebrew name + English titles only. **No Hebrew title lines and no bio paragraphs** in the host cards (owner's decision; the section lead already says they're software people).
 
 ## Facts
 - Monday 2.11, in the evening ("בערב"), on Zoom, 2 hours.
