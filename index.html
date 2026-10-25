@@ -139,6 +139,17 @@ details p{margin:0;padding:0 18px 16px;color:var(--mut)}
 .pay{background:radial-gradient(700px 400px at 50% 0,rgba(30,70,180,.45),transparent 70%),var(--navy)}
 .pay-box{max-width:450px;margin:0 auto;text-align:center}
 .pay-box .price-line{justify-content:center}
+.reg{margin:18px auto 0;max-width:410px;text-align:right;background:var(--card,rgba(255,255,255,.05));border:1px solid var(--line);border-radius:20px;padding:20px 18px}
+.reg-h{font-size:16px;color:var(--mut);margin:0 0 12px}.reg-h b{color:var(--gold2)}
+.pay-step{margin-top:22px}.pay-step .reg-h{text-align:center;margin-bottom:0}
+.fld{display:block;margin-bottom:12px}.fld span{display:block;font-size:15px;font-weight:600;margin-bottom:6px}
+.fld input{width:100%;box-sizing:border-box;min-height:52px;border-radius:12px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:inherit;font:inherit;font-size:17px;padding:0 14px}
+.fld input[dir=ltr]{text-align:right}.fld input::placeholder{color:rgba(255,255,255,.35)}
+.fld input:focus{outline:2px solid var(--gold2);outline-offset:1px}.fld input.bad{border-color:#ff8a7a}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.45;margin:4px 0 14px;cursor:pointer}
+.chk input{width:22px;height:22px;flex:0 0 22px;margin:1px 0 0;accent-color:#e8b64c}
+.err{color:#ff9d8f;font-size:15px;min-height:0;margin-bottom:8px}.err:empty{display:none}
+.priv{font-size:13px;color:var(--mut);line-height:1.5;margin:12px 0 0}
 .pay-frame{margin:18px auto 0;width:100%;max-width:410px;border-radius:20px;overflow:hidden;background:#f2f2f2;box-shadow:0 30px 70px -30px rgba(0,0,0,.8);border:1px solid rgba(255,255,255,.15);position:relative}
 .pay-frame iframe{display:block;width:100%;height:900px;border:0;background:#f2f2f2}
 .pay-frame .ld{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#5a6680;font-size:16px;pointer-events:none}
@@ -330,10 +341,22 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
    <h2>הרשמה <span class="g">ותשלום</span></h2>
    <div class="price-line"><span class="p">99 <small>₪</small></span><span class="d">מחיר מוקדם, <b>עד רביעי 28.10</b></span></div>
    <div class="value"><span class="nw">שעתיים חיות</span> · <span class="nw">הדגמות מהעבודה האמיתית</span> · <span class="nw">כללי בטיחות</span> · <span class="nw">רעיונות למחר</span></div>
-   <p class="lead" style="margin:10px 0 0">ממלאים פרטים ומשלמים כאן, בלי לצאת מהדף.</p>
-   <div class="pay-frame">
-    <div class="ld">טוען את טופס התשלום...</div>
-    <iframe id="payFrame" title="טופס תשלום מאובטח" loading="lazy" allow="payment" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+   <form class="reg" id="regForm" novalidate>
+    <div class="reg-h"><b>שלב 1 מתוך 2:</b> ממלאים פרטים</div>
+    <label class="fld"><span>שם מלא</span><input id="rName" name="name" type="text" autocomplete="name" required maxlength="80" placeholder="ישראל ישראלי"></label>
+    <label class="fld"><span>טלפון נייד</span><input id="rPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="20" placeholder="050-1234567" dir="ltr"></label>
+    <label class="fld"><span>אימייל</span><input id="rEmail" name="email" type="email" inputmode="email" autocomplete="email" required maxlength="120" placeholder="name@example.com" dir="ltr"></label>
+    <label class="chk"><input id="rConsent" name="consent" type="checkbox"><span>מאשר/ת לקבל עדכונים והצעות משיף AI במייל ובווטסאפ</span></label>
+    <div class="err" id="regErr" role="alert" aria-live="polite"></div>
+    <button class="btn full" id="regBtn" type="submit">המשך לתשלום 👈</button>
+    <p class="priv">🔒 הפרטים משמשים רק לשליחת קישור הזום ועדכונים על הסדנה. לא מעבירים לאף אחד. עדכונים שיווקיים רק אם סימנתם, ואפשר להסיר בכל רגע.</p>
+   </form>
+   <div class="pay-step" id="payStep" hidden>
+    <div class="reg-h"><b>שלב 2 מתוך 2:</b> תשלום מאובטח</div>
+    <div class="pay-frame">
+     <div class="ld">טוען את טופס התשלום...</div>
+     <iframe id="payFrame" title="טופס תשלום מאובטח" allow="payment" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
    </div>
    <a class="backup" id="payBackup" target="_blank" rel="noopener">לא נטען? לתשלום בחלון נפרד ↗</a>
    <div class="secure">🔒 התשלום מאובטח דרך <span class="ltr">Invoice4U</span></div>
@@ -349,10 +372,32 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
 // ===== קישור התשלום: מחליפים כאן בלבד =====
 const PAYMENT_URL = "https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-payment?ProductGuid=d04bc8e1-6c1a-46b3-ac0f-34625b7b191b";
 // ==========================================
+// ===== כתובת ה-Web App של Google Sheets (מ-Apps Script). ריק = הטופס לא נשמר, התשלום עדיין נפתח =====
+const SHEET_URL = "";
+// ==========================================
 const f=document.getElementById('payFrame');
-f.src=PAYMENT_URL;
 f.addEventListener('load',()=>{const l=document.querySelector('.pay-frame .ld');if(l)l.remove()});
 document.getElementById('payBackup').href=PAYMENT_URL;
+const payStep=document.getElementById('payStep');
+function showPay(scroll){if(!f.src)f.src=PAYMENT_URL;payStep.hidden=false;if(scroll)setTimeout(()=>payStep.scrollIntoView({behavior:'smooth',block:'start'}),60)}
+// --- registration form ---
+const LS='chiffReg',rf=document.getElementById('regForm'),rN=document.getElementById('rName'),rP=document.getElementById('rPhone'),rE=document.getElementById('rEmail'),rC=document.getElementById('rConsent'),rErr=document.getElementById('regErr'),rB=document.getElementById('regBtn');
+function normPhone(v){let d=String(v||'').replace(/[^\d+]/g,'');if(d.startsWith('+'))d=d.slice(1);d=d.replace(/\D/g,'');if(d.startsWith('00972'))d=d.slice(5);else if(d.startsWith('972'))d=d.slice(3);if(d.length===9&&d[0]==='5')d='0'+d;return /^05\d{8}$/.test(d)?d:null}
+const okEmail=v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+function save(extra){try{const o=Object.assign(JSON.parse(localStorage.getItem(LS)||'{}'),{name:rN.value,phone:rP.value,email:rE.value,consent:rC.checked},extra||{});localStorage.setItem(LS,JSON.stringify(o))}catch(e){}}
+try{const o=JSON.parse(localStorage.getItem(LS)||'{}');if(o.name)rN.value=o.name;if(o.phone)rP.value=o.phone;if(o.email)rE.value=o.email;rC.checked=!!o.consent;if(o.sent)showPay(false)}catch(e){}
+[rN,rP,rE,rC].forEach(el=>el.addEventListener('input',()=>{el.classList.remove('bad');save()}));
+rC.addEventListener('change',()=>save());
+rf.addEventListener('submit',async ev=>{ev.preventDefault();rErr.textContent='';[rN,rP,rE].forEach(x=>x.classList.remove('bad'));
+ const name=rN.value.trim().replace(/\s+/g,' '),phone=normPhone(rP.value),email=rE.value.trim().toLowerCase();const bad=[];
+ if(name.length<2)bad.push([rN,'נא למלא שם מלא']);if(!phone)bad.push([rP,'נא למלא מספר נייד ישראלי תקין: 10 ספרות שמתחילות ב-05']);if(!okEmail(email))bad.push([rE,'נא למלא כתובת אימייל תקינה']);
+ if(bad.length){bad.forEach(b=>b[0].classList.add('bad'));rErr.textContent=bad[0][1];bad[0][0].focus();return}
+ rP.value=phone.slice(0,3)+'-'+phone.slice(3);
+ let rid;try{rid=JSON.parse(localStorage.getItem(LS)||'{}').rid}catch(e){}if(!rid)rid=(crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random().toString(36).slice(2));
+ const payload={id:rid,name,phone,email,consent:rC.checked?'yes':'no',source:location.href,userAgent:navigator.userAgent};
+ save({rid});rB.disabled=true;rB.textContent='שומר...';
+ if(SHEET_URL){try{const ctl=new AbortController();const t=setTimeout(()=>ctl.abort(),6000);await fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload),signal:ctl.signal,keepalive:true});clearTimeout(t)}catch(e){}}
+ save({sent:true});rB.disabled=false;rB.textContent='המשך לתשלום 👈';showPay(true)});
 // sticky CTA: show after hero, hide near payment section
 const st=document.getElementById('sticky'),hero=document.querySelector('.hero'),pay=document.getElementById('pay');
 let hv=true,pv=false;const up=()=>st.classList.toggle('on',!hv&&!pv);
