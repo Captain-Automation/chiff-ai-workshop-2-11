@@ -9,6 +9,8 @@ Live: https://captain-automation.github.io/chiff-ai-workshop-2-11/
 ```
 index.html            the whole page: inline CSS + inline JS, no build step, no framework
 .nojekyll             tells GitHub Pages to serve files as-is
+netlify.toml          Netlify config: no build, publish ".", /workshop alias, security + cache headers, hides repo docs
+DEPLOY-NETLIFY-HE.md  simple Hebrew steps for the owner: Netlify account, connect repo, buy domain, DNS, HTTPS
 assets/
   ad-magazine.webp                the workshop ad (the only one shown). Use as-is, don't redesign.
   asher-ad.webp, chaim-ad.webp    host portraits (cropped from the original ad artwork)
@@ -33,6 +35,8 @@ Always check mobile first (390px wide) and desktop (1280px). Don't leave horizon
 
 ## Deploy
 Push to `main`. GitHub Pages serves the repo root. Live within ~1 minute; check with `?v=123` to bypass cache.
+Moving to Netlify (same repo, same `main`, auto-deploy on push) with a custom domain; owner steps in `DEPLOY-NETLIFY-HE.md`. Domain not bought yet (candidates: chiff-ai.co.il + chiffai.co.il, page also at `/workshop`). When it is live: update `og:url`, `og:image`, add canonical, and the Live URL above. Keep GitHub Pages up at least until after 2.11.
+The CSP in `netlify.toml` allows only self + inline; adding analytics or a pixel means adding its domains there. `frame-src` stays `https:` so the payment iframe is never blocked.
 Repo must stay clean: page files only. **No secrets, no API keys, nothing about other projects.**
 
 ## Brand rules (Chiff AI)

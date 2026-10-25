@@ -1,0 +1,54 @@
+# Netlify: static site, no build step. The repo root is the site.
+[build]
+  publish = "."
+  command = ""
+
+# The workshop page also lives at /workshop (e.g. chiff-ai.co.il/workshop).
+# Relative asset paths ("assets/...") only resolve from /workshop without a trailing slash.
+[[redirects]]
+  from = "/workshop/"
+  to = "/workshop"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workshop"
+  to = "/index.html"
+  status = 200
+
+# Repo docs are not part of the site.
+[[redirects]]
+  from = "/CLAUDE.md"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/DEPLOY-NETLIFY-HE.md"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/netlify.toml"
+  to = "/404"
+  status = 404
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    # Inline CSS/JS is how the page is built. frame-src stays broad (https:) so a
+    # redirect inside the Invoice4U iframe (e.g. bank 3-D Secure) never blocks a sale.
+    # Adding analytics or a pixel later means adding its domains to script-src/img-src/connect-src.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https:; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+
+# Asset file names are not hashed, so cache for a week, not forever.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
