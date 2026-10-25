@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>סדנת AI: עוזר אישי שעושה בשבילך את העבודה | שיף AI</title>
+<meta name="description" content="סדנה חיה בזום, יום שני 2.11 בערב, שעתיים. מתאימה למתחילים לגמרי, הכל צעד אחרי צעד. Grok Bot, Instinct ו-Dots. 99 ₪ במחיר מוקדם עד רביעי 28.10.">
+<meta name="theme-color" content="#0a1838">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:site_name" content="שיף AI">
+<meta property="og:title" content="סדנת AI: עוזר אישי שעושה בשבילך את העבודה">
+<meta property="og:description" content="יום שני 2.11 בערב, בזום, שעתיים. מתאים למתחילים לגמרי. 99 ₪ במחיר מוקדם עד רביעי 28.10.">
+<meta property="og:image" content="https://captain-automation.github.io/chiff-ai-workshop-2-11/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://captain-automation.github.io/chiff-ai-workshop-2-11/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://captain-automation.github.io/chiff-ai-workshop-2-11/assets/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e8b64c'/%3E%3Ctext x='32' y='43' font-size='30' font-family='Georgia,serif' font-weight='800' text-anchor='middle' fill='%230a1838'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="assets/rubik-hebrew.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://private.invoice4u.co.il">
+<style>
+@font-face{font-family:'Rubik';src:url('assets/rubik-hebrew.woff2') format('woff2');font-weight:300 900;font-display:swap;unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:'Rubik';src:url('assets/rubik-latin.woff2') format('woff2');font-weight:300 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'LogoSans';src:url('assets/logo-chiff.woff2') format('woff2');font-weight:700;font-display:block}
+@font-face{font-family:'LogoSlab';src:url('assets/logo-ai.woff2') format('woff2');font-weight:800;font-display:block}
+:root{--navy:#0a1838;--navy2:#11255a;--blue:#1e46b4;--gold:#e8b64c;--gold2:#f6d48a;--ink:#0a1838;--txt:#e9eefb;--mut:#b4c0de;--card:rgba(255,255,255,.06);--line:rgba(232,182,76,.35)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:'Rubik',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;background:var(--navy);color:var(--txt);line-height:1.6;font-size:17px}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h1,h2,h3{line-height:1.2;margin:0}
+h2{font-size:clamp(26px,6.4vw,38px);font-weight:800;margin-bottom:10px}
+h2 .g,h1 .g{color:var(--gold)}
+.lead{color:var(--mut);font-size:18px;margin:0 0 26px}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:28px 0 52px;background:
+ radial-gradient(900px 500px at 85% -10%,rgba(30,70,180,.55),transparent 60%),
+ radial-gradient(700px 420px at -10% 30%,rgba(232,182,76,.13),transparent 60%),
+ linear-gradient(180deg,#0c1d47,var(--navy))}
+.hero:after{content:"";position:absolute;inset:auto 0 0 0;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin-bottom:34px}
+.logo{display:inline-flex;direction:ltr;align-items:center;gap:.16em;font-size:30px;line-height:1;padding:.32em .5em;border-radius:16px;background:rgba(10,24,56,.6);border:1px solid rgba(255,255,255,.12)}
+.logo .chiff{font-family:'LogoSans','Open Sans',sans-serif;font-weight:700;color:#fff;letter-spacing:-.02em}
+.logo .badge{background:var(--gold);border-radius:22%;display:flex;align-items:center;justify-content:center;width:1.32em;height:1.12em}
+.logo .badge span{font-family:'LogoSlab','Roboto Slab',serif;font-weight:800;color:var(--navy);font-size:.7em}
+.brand .tl{font-size:14px;color:var(--mut);letter-spacing:.01em}
+.hero-grid{display:grid;gap:30px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;color:var(--gold2);border:1px solid var(--line);border-radius:99px;padding:6px 14px;background:rgba(232,182,76,.08)}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:#ff5b5b;box-shadow:0 0 0 4px rgba(255,91,91,.2)}
+h1{font-size:clamp(38px,10.5vw,62px);font-weight:900;margin:16px 0 12px;letter-spacing:-.01em}
+h1 .g{display:block;font-size:.62em;font-weight:800;margin-top:6px}
+.sub{font-size:19px;color:var(--txt);margin:0 0 20px;max-width:34em}
+.sub b{color:var(--gold2);font-weight:700}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;padding:0;list-style:none}
+.facts li{font-size:15px;font-weight:600;padding:7px 13px;border-radius:10px;background:var(--card);border:1px solid rgba(255,255,255,.1)}
+.price-line{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.price-line .p{font-size:44px;font-weight:900;color:var(--gold);line-height:1}
+.price-line .p small{font-size:.55em}
+.price-line .d{font-size:16px;color:var(--mut)}
+.price-line .d b{color:var(--txt)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 30px;border-radius:16px;font-weight:800;font-size:20px;text-decoration:none;color:var(--ink);background:linear-gradient(180deg,var(--gold2),#e0a93c);box-shadow:0 12px 30px -10px rgba(232,182,76,.7),inset 0 -2px 0 rgba(0,0,0,.12);transition:transform .15s}
+.btn:active{transform:scale(.98)}
+.btn.full{width:100%}
+.hosts-mini{display:flex;align-items:center;gap:12px;margin-top:20px;color:var(--mut);font-size:15px}
+.hosts-mini .av{display:flex}
+.hosts-mini .av img{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:50% 12%;border:2px solid var(--navy);background:linear-gradient(160deg,#2a5bd7,#173a8f)}
+.hosts-mini .av img+img{margin-right:-12px}
+.hosts-mini b{color:var(--txt);font-weight:600}
+.hero-card{border-radius:24px;padding:22px;background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.chat{display:flex;flex-direction:column;gap:10px;font-size:16px}
+.chat .m{max-width:86%;padding:10px 14px;border-radius:16px;line-height:1.45}
+.chat .me{align-self:flex-start;background:#1d4fd0;border-bottom-right-radius:4px}
+.chat .ai{align-self:flex-end;background:#fff;color:var(--ink);border-bottom-left-radius:4px}
+.chat .ai b{color:#0f7a43}
+.chat .who{font-size:12px;color:var(--mut);align-self:flex-end;margin-bottom:-6px}
+.chat .note{font-size:13px;color:var(--mut);text-align:center;margin-top:4px}
+
+/* who */
+.alt{background:linear-gradient(180deg,#0d1f4c,#0a1838)}
+.badge-big{display:flex;gap:14px;align-items:center;padding:18px 20px;border-radius:18px;background:linear-gradient(100deg,var(--gold2),#e0a93c);color:var(--ink);margin-bottom:22px}
+.badge-big .ic{flex:none;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--gold2);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px}
+.badge-big b{display:block;font-size:20px;font-weight:800;line-height:1.25}
+.badge-big span{font-size:15px;font-weight:500}
+.grid{display:grid;gap:14px}
+.card{border-radius:18px;padding:20px;background:var(--card);border:1px solid rgba(255,255,255,.1)}
+.card h3{font-size:19px;font-weight:700;margin-bottom:6px}
+.card p{margin:0;color:var(--mut);font-size:16px}
+.card .em{font-size:26px;line-height:1;margin-bottom:10px;display:block}
+
+/* learn */
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.steps li{counter-increment:s;position:relative;padding:16px 64px 16px 18px;border-radius:16px;background:var(--card);border:1px solid rgba(255,255,255,.08)}
+.steps li:before{content:counter(s);position:absolute;right:16px;top:16px;width:34px;height:34px;border-radius:10px;background:rgba(232,182,76,.15);border:1px solid var(--line);color:var(--gold);font-weight:800;display:flex;align-items:center;justify-content:center}
+.steps b{display:block;font-size:18px;font-weight:700}
+.steps span{color:var(--mut);font-size:16px}
+
+/* tools */
+.tool{position:relative;overflow:hidden}
+.tool .nm{font-weight:800;font-size:24px;direction:ltr;text-align:right;margin-bottom:4px;display:flex;align-items:center;gap:10px;justify-content:flex-end}
+.tool .nm i{width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px rgba(232,182,76,.9)}
+.tool .tg{display:inline-block;font-size:13px;font-weight:600;color:var(--gold2);background:rgba(232,182,76,.1);border:1px solid var(--line);border-radius:99px;padding:2px 10px;margin-bottom:10px}
+.tool.lock{border-style:dashed;border-color:var(--line);background:rgba(232,182,76,.04);display:flex;align-items:center;gap:14px}
+.tool.lock .lk{font-size:30px}
+.tool.lock h3{color:var(--gold2)}
+
+/* hosts */
+.host{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}
+.host .ph{width:120px;height:139px;border-radius:18px;overflow:hidden;background:radial-gradient(120px 120px at 50% 30%,#3d6fe6,#173a8f);border:1px solid var(--line)}
+.host .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.host h3{font-size:22px;font-weight:800;margin-bottom:4px}
+.host .t1{direction:ltr;text-align:right;color:var(--gold2);font-weight:600;font-size:15px}
+.host .t2{direction:ltr;text-align:right;color:var(--mut);font-size:15px;margin-bottom:8px}
+.host p{margin:0;font-size:16px;color:var(--txt)}
+
+/* details */
+.det{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.det .card{padding:16px}
+.det .k{font-size:14px;color:var(--mut)}
+.det .v{font-size:20px;font-weight:800}
+.det .v.gold{color:var(--gold)}
+.det .wide{grid-column:1/-1}
+
+/* faq */
+details{border-radius:16px;background:var(--card);border:1px solid rgba(255,255,255,.08);margin-bottom:10px}
+summary{cursor:pointer;list-style:none;padding:16px 18px 16px 48px;font-weight:700;font-size:18px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;left:18px;top:50%;transform:translateY(-50%);font-size:24px;color:var(--gold);font-weight:400}
+details[open] summary:after{content:"−"}
+details p{margin:0;padding:0 18px 16px;color:var(--mut)}
+
+/* pay */
+.pay{background:radial-gradient(700px 400px at 50% 0,rgba(30,70,180,.45),transparent 70%),var(--navy)}
+.pay-box{max-width:450px;margin:0 auto;text-align:center}
+.pay-box .price-line{justify-content:center}
+.pay-frame{margin:18px auto 0;width:100%;max-width:410px;border-radius:20px;overflow:hidden;background:#f2f2f2;box-shadow:0 30px 70px -30px rgba(0,0,0,.8);border:1px solid rgba(255,255,255,.15);position:relative}
+.pay-frame iframe{display:block;width:100%;height:900px;border:0;background:#f2f2f2}
+.pay-frame .ld{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#5a6680;font-size:16px;pointer-events:none}
+.backup{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:12px 20px;border-radius:14px;border:1px solid var(--line);color:var(--gold2);text-decoration:none;font-weight:600;font-size:16px}
+.secure{font-size:14px;color:var(--mut);margin-top:12px}
+footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;border-top:1px solid rgba(255,255,255,.06)}
+
+/* sticky cta (mobile) */
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:20;transform:translateY(140%);transition:transform .25s}
+.sticky.on{transform:none}
+.sticky .btn{width:100%;box-shadow:0 14px 34px -8px rgba(0,0,0,.7)}
+
+@media (max-width:859px){
+ .hero .btn{width:100%}
+ .facts li{font-size:14px;padding:6px 10px}
+}
+@media (min-width:860px){
+ body{font-size:18px}
+ section{padding:80px 0}
+ .hero{padding:34px 0 80px}
+ .hero-grid{grid-template-columns:1.25fr .9fr;gap:56px}
+ .g3{grid-template-columns:repeat(3,1fr)}
+ .g2{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:1fr 1fr}
+ .det{grid-template-columns:repeat(5,1fr)}
+ .det .wide{grid-column:auto}
+ .host{grid-template-columns:150px 1fr}
+ .host .ph{width:150px;height:174px}
+ .sticky{display:none}
+ .faq-wrap{max-width:760px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+ <div class="wrap">
+  <div class="brand">
+   <div class="logo" aria-label="Chiff AI"><span class="chiff">Chiff</span><span class="badge"><span>AI</span></span></div>
+   <div class="tl">שיף AI: פיתוח תוכנה, בוטים ואוטומציות</div>
+  </div>
+  <div class="hero-grid">
+   <div>
+    <span class="eyebrow"><i></i>סדנת AI חיה בזום</span>
+    <h1>עוזר AI אישי <span class="g">שעושה בשבילך את העבודה</span></h1>
+    <p class="sub">סדנה של שעתיים <b>למתחילים לגמרי</b>. נראה בשידור חי איך עוזרים אישיים כמו <span class="ltr">Grok Bot</span>, <span class="ltr">Instinct</span> ו-<span class="ltr">Dots</span> מכינים דוחות, עונים למיילים ומסדרים משימות, ונסביר כל דבר <b>צעד&nbsp;אחרי&nbsp;צעד</b>.</p>
+    <ul class="facts">
+     <li>📅 יום שני 2.11, בערב</li><li>💻 בזום · שעתיים</li>
+    </ul>
+    <div class="price-line"><span class="p">99 <small>₪</small></span><span class="d">מחיר מוקדם, <b>רק עד רביעי 28.10</b></span></div>
+    <a class="btn" href="#pay" data-cta>להרשמה 👈</a>
+    <div class="hosts-mini">
+     <span class="av"><img src="assets/asher.webp" alt="" width="44" height="44"><img src="assets/chaim.webp" alt="" width="44" height="44"></span>
+     <span>עם <b>אשר שיף</b> ו<b>חיים אבלס</b></span>
+    </div>
+   </div>
+   <div class="hero-card" aria-hidden="true">
+    <div class="chat">
+     <div class="m me">תכין לי טיוטת תשובה לכל מייל מלקוח מהיום. אל תשלח כלום.</div>
+     <div class="who">העוזר האישי</div>
+     <div class="m ai">הכנתי <b>6 טיוטות</b> ✅<br>הן מחכות לאישור שלך. שולח רק אחרי שתאשר.</div>
+     <div class="m me">ותשלח לי כל בוקר סיכום של מה מחכה לי היום.</div>
+     <div class="m ai">סגור. מחר ב-7:00 הדוח הראשון אצלך במייל 📩</div>
+     <div class="note">ככה זה נראה. את זה תלמדו לעשות בסדנה.</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</header>
+
+<section class="alt" id="for">
+ <div class="wrap">
+  <div class="badge-big"><span class="ic">✓</span><div><b>מתאים גם בלי שום רקע טכני</b><span>מתחילים מאפס ומסבירים הכל, שלב אחרי שלב.</span></div></div>
+  <h2>למי <span class="g">הסדנה מתאימה?</span></h2>
+  <p class="lead">אם אתם יודעים לשלוח הודעה בוואטסאפ, אתם יכולים להשתמש בעוזר AI.</p>
+  <div class="grid g3">
+   <div class="card"><span class="em">💼</span><h3>בעלי עסקים ועצמאים</h3><p>שרוצים לחסוך שעות על מיילים, דוחות וסידורים.</p></div>
+   <div class="card"><span class="em">🗂️</span><h3>מנהלי משרד ועובדים</h3><p>שרוצים שהמשימות החוזרות יקרו לבד.</p></div>
+   <div class="card"><span class="em">🏠</span><h3>כל מי שסקרן</h3><p>שרוצה להבין מה ה-AI כבר יודע לעשות בשבילו, גם בבית.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="learn">
+ <div class="wrap">
+  <h2>מה <span class="g">תלמדו?</span></h2>
+  <p class="lead">בלי תיאוריות. הכל מוצג על המסך, בשידור חי.</p>
+  <ol class="steps">
+   <li><b>מה זה עוזר AI אישי</b><span>ובמה הוא שונה מצ'אט רגיל שרק עונה.</span></li>
+   <li><b>איך נותנים לו משימה</b><span>במילים פשוטות, והוא מבצע אותה עד הסוף.</span></li>
+   <li><b>הדגמות חיות מהעבודה האמיתית</b><span>דוח שמגיע לבד כל בוקר, טיוטות מיילים ללקוחות, קבלות שהופכות לטבלה.</span></li>
+   <li><b>איזה כלי מתאים לכם</b><span>מה כל אחד יודע, כמה הוא עולה ומה זמין בישראל.</span></li>
+   <li><b>כללי בטיחות</b><span>איך לוודא שה-AI לא שולח ולא משלם בלי אישור שלכם.</span></li>
+   <li><b>מה להפעיל כבר מחר</b><span>רעיונות מעשיים לעסק ולבית.</span></li>
+  </ol>
+ </div>
+</section>
+
+<section class="alt" id="tools">
+ <div class="wrap">
+  <h2>הכלים <span class="g">שנכיר</span></h2>
+  <p class="lead">העוזרים האישיים החדשים, ומה כל אחד עושה בשבילכם.</p>
+  <div class="grid g2">
+   <div class="card tool"><div class="nm">Grok Bot <i></i></div><span class="tg">צוות בוטים</span><p>עוזרים עם מחשב משלהם. שולחים הודעה, והם מבצעים את העבודה עד הסוף, גם כשהמחשב שלכם סגור.</p></div>
+   <div class="card tool"><div class="nm">Instinct <i></i></div><span class="tg">עוזר בהודעה</span><p>עוזר שכותבים לו בהודעה, והוא עושה בשבילכם.</p></div>
+   <div class="card tool"><div class="nm">Dots <i></i></div><span class="tg">של OpenAI</span><p>עוזר בתוך ChatGPT שמקבל אחריות על משימה ועוקב אחריה בשבילכם.</p></div>
+   <div class="card tool lock"><span class="lk">🤫</span><div><h3>ועוד הפתעה אחת</h3><p>נחשוף אותה רק בסדנה.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="hosts">
+ <div class="wrap">
+  <h2>מי <span class="g">מנחה?</span></h2>
+  <p class="lead">שני אנשי פיתוח תוכנה, שמסבירים בשפה פשוטה.</p>
+  <div class="grid g2">
+   <div class="card host">
+    <div class="ph"><img src="assets/asher.webp" alt="אשר שיף" width="480" height="556" loading="lazy"></div>
+    <div><h3>אשר שיף</h3><div class="t1">Software Developer</div><div class="t2">Founder, Chiff AI</div><p>בונה בוטים ואוטומציות, ועובד עם עוזרי AI כל יום.</p></div>
+   </div>
+   <div class="card host">
+    <div class="ph"><img src="assets/chaim.webp" alt="חיים אבלס" width="480" height="556" loading="lazy"></div>
+    <div><h3>חיים אבלס</h3><div class="t1">Software Tech Lead</div><div class="t2">Software Development Lecturer</div><p>מוביל צוותי פיתוח ומלמד פיתוח תוכנה.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="alt" id="details">
+ <div class="wrap">
+  <h2>פרטי <span class="g">הסדנה</span></h2>
+  <div style="height:14px"></div>
+  <div class="det">
+   <div class="card"><div class="k">מתי</div><div class="v">יום שני 2.11</div></div>
+   <div class="card"><div class="k">שעה</div><div class="v">בערב</div></div>
+   <div class="card"><div class="k">איפה</div><div class="v">בזום</div></div>
+   <div class="card"><div class="k">כמה זמן</div><div class="v">שעתיים</div></div>
+   <div class="card wide"><div class="k">מחיר מוקדם, עד רביעי 28.10</div><div class="v gold">99 ₪</div></div>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap faq-wrap">
+  <h2>שאלות <span class="g">נפוצות</span></h2>
+  <div style="height:14px"></div>
+  <details><summary>צריך ידע במחשבים?</summary><p>לא. מתחילים מאפס ומסבירים כל דבר צעד אחרי צעד. אם אתם יודעים לשלוח הודעה בוואטסאפ, תסתדרו.</p></details>
+  <details><summary>באיזו שעה?</summary><p>ביום שני 2.11 בערב. את השעה המדויקת נשלח לכל הנרשמים.</p></details>
+  <details><summary>איך מצטרפים?</summary><p>בזום, מהמחשב או מהטלפון. את הקישור לזום נשלח לנרשמים לפני הסדנה.</p></details>
+  <details><summary>הכלים בעברית?</summary><p>חלקם כן. בסדנה נראה בדיוק מה עובד בעברית ומה עדיין לא.</p></details>
+  <details><summary>הסדנה מתאימה לציבור החרדי?</summary><p>כן. התכנים נקיים ומקצועיים, ומתמקדים בעבודה ובבית.</p></details>
+  <details><summary>עד מתי המחיר המוקדם?</summary><p>99 ₪ עד יום רביעי 28.10.</p></details>
+ </div>
+</section>
+
+<section class="pay" id="pay">
+ <div class="wrap">
+  <div class="pay-box">
+   <h2>הרשמה <span class="g">ותשלום</span></h2>
+   <div class="price-line"><span class="p">99 <small>₪</small></span><span class="d">מחיר מוקדם, <b>עד רביעי 28.10</b></span></div>
+   <p class="lead" style="margin-bottom:0">ממלאים פרטים ומשלמים כאן, בלי לצאת מהדף.</p>
+   <div class="pay-frame">
+    <div class="ld">טוען את טופס התשלום...</div>
+    <iframe id="payFrame" title="טופס תשלום מאובטח" loading="lazy" allow="payment" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+   </div>
+   <a class="backup" id="payBackup" target="_blank" rel="noopener">לא נטען? לתשלום בחלון נפרד ↗</a>
+   <div class="secure">🔒 התשלום מאובטח דרך <span class="ltr">Invoice4U</span></div>
+  </div>
+ </div>
+</section>
+
+<footer>© 2026 · כל הזכויות שמורות</footer>
+
+<div class="sticky" id="sticky"><a class="btn" href="#pay" data-cta>להרשמה · 99 ₪ 👈</a></div>
+
+<script>
+// ===== קישור התשלום: מחליפים כאן בלבד =====
+const PAYMENT_URL = "https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-payment?ProductGuid=d04bc8e1-6c1a-46b3-ac0f-34625b7b191b";
+// ==========================================
+const f=document.getElementById('payFrame');
+f.src=PAYMENT_URL;
+f.addEventListener('load',()=>{const l=document.querySelector('.pay-frame .ld');if(l)l.remove()});
+document.getElementById('payBackup').href=PAYMENT_URL;
+// sticky CTA: show after hero, hide near payment section
+const st=document.getElementById('sticky'),hero=document.querySelector('.hero'),pay=document.getElementById('pay');
+let hv=true,pv=false;const up=()=>st.classList.toggle('on',!hv&&!pv);
+new IntersectionObserver(e=>{hv=e[0].isIntersecting;up()}).observe(hero);
+new IntersectionObserver(e=>{pv=e[0].isIntersecting;up()},{rootMargin:'0px 0px 200px 0px'}).observe(pay);
+</script>
+</body>
+</html>
