@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>סדנת AI: עוזר אישי שעושה בשבילך את העבודה | שיף AI</title>
+<title>סדנת AI: עוזר AI אישי שעושה בשבילכם את העבודה | שיף AI</title>
 <meta name="description" content="סדנה חיה בזום, יום שני 2.11 בערב, שעתיים. מתאימה למתחילים לגמרי, הכל צעד אחרי צעד. Grok Bot, Instinct ו-Dots. 99 ₪ במחיר מוקדם עד רביעי 28.10.">
 <meta name="theme-color" content="#0a1838">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="he_IL">
 <meta property="og:site_name" content="שיף AI">
-<meta property="og:title" content="סדנת AI: עוזר אישי שעושה בשבילך את העבודה">
+<meta property="og:title" content="סדנת AI: עוזר AI אישי שעושה בשבילכם את העבודה">
 <meta property="og:description" content="יום שני 2.11 בערב, בזום, שעתיים. מתאים למתחילים לגמרי. 99 ₪ במחיר מוקדם עד רביעי 28.10.">
 <meta property="og:image" content="https://captain-automation.github.io/chiff-ai-workshop-2-11/assets/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -146,7 +146,14 @@ details p{margin:0;padding:0 18px 16px;color:var(--mut)}
 .secure{font-size:14px;color:var(--mut);margin-top:12px}
 footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;border-top:1px solid rgba(255,255,255,.06)}
 
-/* sticky cta (mobile) */
+.toolsline{margin:-8px 0 18px;font-weight:700;font-size:17px;color:var(--gold2);letter-spacing:.01em}
+.value{font-size:15px;font-weight:600;color:var(--txt);margin:0 0 14px;padding:10px 14px;border-radius:12px;background:rgba(232,182,76,.08);border:1px solid var(--line);line-height:1.5}
+.value .nw{white-space:nowrap}
+.pay .value{margin:16px auto 0;max-width:410px}
+.steps li{padding:13px 62px 13px 16px;font-weight:700;font-size:17px;min-height:58px;display:flex;align-items:center}
+.steps li:before{top:50%;transform:translateY(-50%)}
+.pay-frame iframe{height:972px;margin-top:-72px}
+/* sticky cta */
 .sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:20;transform:translateY(140%);transition:transform .25s}
 .sticky.on{transform:none}
 .sticky .btn{width:100%;box-shadow:0 14px 34px -8px rgba(0,0,0,.7)}
@@ -163,11 +170,12 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
  .g3{grid-template-columns:repeat(3,1fr)}
  .g2{grid-template-columns:1fr 1fr}
  .steps{grid-template-columns:1fr 1fr}
- .det{grid-template-columns:repeat(5,1fr)}
+ .det{grid-template-columns:repeat(4,1fr)}
  .det .wide{grid-column:auto}
  .host{grid-template-columns:150px 1fr}
  .host .ph{width:150px;height:174px}
  .sticky{display:none}
+ .hero .value{display:table}
  .faq-wrap{max-width:760px}
 }
 </style>
@@ -183,12 +191,14 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
   <div class="hero-grid">
    <div>
     <span class="eyebrow"><i></i>סדנת AI חיה בזום</span>
-    <h1>עוזר AI אישי <span class="g">שעושה בשבילך את העבודה</span></h1>
-    <p class="sub">סדנה של שעתיים <b>למתחילים לגמרי</b>. נראה בשידור חי איך עוזרים אישיים כמו <span class="ltr">Grok Bot</span>, <span class="ltr">Instinct</span> ו-<span class="ltr">Dots</span> מכינים דוחות, עונים למיילים ומסדרים משימות, ונסביר כל דבר <b>צעד&nbsp;אחרי&nbsp;צעד</b>.</p>
+    <h1>עוזר AI אישי <span class="g">שעושה בשבילכם את העבודה</span></h1>
+    <p class="sub">תראו בשידור חי עוזר AI שמכין דוחות, עונה למיילים ומסדר משימות. שעתיים, <b>למתחילים לגמרי</b>, <b>צעד&nbsp;אחרי&nbsp;צעד</b>.</p>
+    <p class="toolsline"><span class="ltr">Grok Bot</span> · <span class="ltr">Instinct</span> · <span class="ltr">Dots</span></p>
     <ul class="facts">
      <li>📅 יום שני 2.11, בערב</li><li>💻 בזום · שעתיים</li>
     </ul>
     <div class="price-line"><span class="p">99 <small>₪</small></span><span class="d">מחיר מוקדם, <b>רק עד רביעי 28.10</b></span></div>
+    <div class="value"><span class="nw">שעתיים חיות</span> · <span class="nw">הדגמות מהעבודה האמיתית</span> · <span class="nw">כללי בטיחות</span> · <span class="nw">רעיונות למחר</span></div>
     <a class="btn" href="#pay" data-cta>להרשמה 👈</a>
     <div class="hosts-mini">
      <span class="av"><img src="assets/asher.webp" alt="" width="44" height="44"><img src="assets/chaim.webp" alt="" width="44" height="44"></span>
@@ -199,9 +209,9 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
     <div class="chat">
      <div class="m me">תכין לי טיוטת תשובה לכל מייל מלקוח מהיום. אל תשלח כלום.</div>
      <div class="who">העוזר האישי</div>
-     <div class="m ai">הכנתי <b>6 טיוטות</b> ✅<br>הן מחכות לאישור שלך. שולח רק אחרי שתאשר.</div>
+     <div class="m ai">הכנתי <b>6 טיוטות</b> ✅<br>הן מחכות לאישור. שום דבר לא נשלח בלי אישור.</div>
      <div class="m me">ותשלח לי כל בוקר סיכום של מה מחכה לי היום.</div>
-     <div class="m ai">סגור. מחר ב-7:00 הדוח הראשון אצלך במייל 📩</div>
+     <div class="m ai">סגור. מחר ב-7:00 הדוח הראשון במייל 📩</div>
      <div class="note">ככה זה נראה. את זה תלמדו לעשות בסדנה.</div>
     </div>
    </div>
@@ -217,7 +227,7 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
   <div class="grid g3">
    <div class="card"><span class="em">💼</span><h3>בעלי עסקים ועצמאים</h3><p>שרוצים לחסוך שעות על מיילים, דוחות וסידורים.</p></div>
    <div class="card"><span class="em">🗂️</span><h3>מנהלי משרד ועובדים</h3><p>שרוצים שהמשימות החוזרות יקרו לבד.</p></div>
-   <div class="card"><span class="em">🏠</span><h3>כל מי שסקרן</h3><p>שרוצה להבין מה ה-AI כבר יודע לעשות בשבילו, גם בבית.</p></div>
+   <div class="card"><span class="em">🏠</span><h3>סקרנים</h3><p>שרוצים להבין מה ה-AI כבר יודע לעשות בשבילכם, גם בבית.</p></div>
   </div>
  </div>
 </section>
@@ -227,12 +237,12 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
   <h2>מה <span class="g">תלמדו?</span></h2>
   <p class="lead">בלי תיאוריות. הכל מוצג על המסך, בשידור חי.</p>
   <ol class="steps">
-   <li><b>מה זה עוזר AI אישי</b><span>ובמה הוא שונה מצ'אט רגיל שרק עונה.</span></li>
-   <li><b>איך נותנים לו משימה</b><span>במילים פשוטות, והוא מבצע אותה עד הסוף.</span></li>
-   <li><b>הדגמות חיות מהעבודה האמיתית</b><span>דוח שמגיע לבד כל בוקר, טיוטות מיילים ללקוחות, קבלות שהופכות לטבלה.</span></li>
-   <li><b>איזה כלי מתאים לכם</b><span>מה כל אחד יודע, כמה הוא עולה ומה זמין בישראל.</span></li>
-   <li><b>כללי בטיחות</b><span>איך לוודא שה-AI לא שולח ולא משלם בלי אישור שלכם.</span></li>
-   <li><b>מה להפעיל כבר מחר</b><span>רעיונות מעשיים לעסק ולבית.</span></li>
+   <li>מה זה עוזר AI אישי</li>
+   <li>איך נותנים לו משימה</li>
+   <li>הדגמות חיות מהעבודה</li>
+   <li>איזה כלי מתאים לכם</li>
+   <li>כללי בטיחות ואישורים</li>
+   <li>מה להפעיל כבר מחר</li>
   </ol>
  </div>
 </section>
@@ -242,10 +252,7 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
   <h2>הכלים <span class="g">שנכיר</span></h2>
   <p class="lead">העוזרים האישיים החדשים, ומה כל אחד עושה בשבילכם.</p>
   <div class="grid g2">
-   <div class="card tool"><div class="nm">Grok Bot <i></i></div><span class="tg">צוות בוטים</span><p>עוזרים עם מחשב משלהם. שולחים הודעה, והם מבצעים את העבודה עד הסוף, גם כשהמחשב שלכם סגור.</p></div>
-   <div class="card tool"><div class="nm">Instinct <i></i></div><span class="tg">עוזר בהודעה</span><p>עוזר שכותבים לו בהודעה, והוא עושה בשבילכם.</p></div>
-   <div class="card tool"><div class="nm">Dots <i></i></div><span class="tg">של OpenAI</span><p>עוזר בתוך ChatGPT שמקבל אחריות על משימה ועוקב אחריה בשבילכם.</p></div>
-   <div class="card tool lock"><span class="lk">🤫</span><div><h3>ועוד הפתעה אחת</h3><p>נחשוף אותה רק בסדנה.</p></div></div>
+   <div class="card tool"><div class="nm">Grok Bot <i></i></div><span class="tg">צוות בוטים</span><p>בוטים עם מחשב משלהם בענן. שולחים הודעה, והם מבצעים עד הסוף, גם כשהמחשב שלכם סגור.</p></div>
   </div>
  </div>
 </section>
@@ -276,7 +283,6 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
    <div class="card"><div class="k">שעה</div><div class="v">בערב</div></div>
    <div class="card"><div class="k">איפה</div><div class="v">בזום</div></div>
    <div class="card"><div class="k">כמה זמן</div><div class="v">שעתיים</div></div>
-   <div class="card wide"><div class="k">מחיר מוקדם, עד רביעי 28.10</div><div class="v gold">99 ₪</div></div>
   </div>
  </div>
 </section>
@@ -299,7 +305,8 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
   <div class="pay-box">
    <h2>הרשמה <span class="g">ותשלום</span></h2>
    <div class="price-line"><span class="p">99 <small>₪</small></span><span class="d">מחיר מוקדם, <b>עד רביעי 28.10</b></span></div>
-   <p class="lead" style="margin-bottom:0">ממלאים פרטים ומשלמים כאן, בלי לצאת מהדף.</p>
+   <div class="value"><span class="nw">שעתיים חיות</span> · <span class="nw">הדגמות מהעבודה האמיתית</span> · <span class="nw">כללי בטיחות</span> · <span class="nw">רעיונות למחר</span></div>
+   <p class="lead" style="margin:10px 0 0">ממלאים פרטים ומשלמים כאן, בלי לצאת מהדף.</p>
    <div class="pay-frame">
     <div class="ld">טוען את טופס התשלום...</div>
     <iframe id="payFrame" title="טופס תשלום מאובטח" loading="lazy" allow="payment" referrerpolicy="strict-origin-when-cross-origin"></iframe>
