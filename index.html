@@ -114,6 +114,10 @@ h1 .g{display:block;font-size:.62em;font-weight:800;margin-top:6px}
 .tool.feat{border-color:var(--line);background:linear-gradient(160deg,rgba(232,182,76,.1),rgba(255,255,255,.03))}
 @media (min-width:860px){.tool.feat,.tool.lock{grid-column:1/-1}.tool.feat .uc{grid-template-columns:1fr 1fr;column-gap:28px}}
 .tool.lock h3{color:var(--gold2)}
+.tool details.more{background:transparent;border:1px dashed var(--line);margin:12px 0 0}
+.tool details.more summary{color:var(--gold2);font-size:15px}
+.tool details.more summary:after{content:none}
+.tool details.more .uc{margin:0;padding:0 14px 14px}
 
 /* hosts */
 .host{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center}
@@ -247,7 +251,7 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
   <div class="grid g3">
    <div class="card"><span class="em">💼</span><h3>עצמאים ובעלי עסק</h3><p>שרוצים שמישהו יכין, יבדוק ויעדכן, והם רק יאשרו.</p></div>
    <div class="card"><span class="em">🗂️</span><h3>מנהלי משרד ועובדים</h3><p>שרוצים שהמשימה שחוזרת כל שבוע תרוץ לבד, בזמן קבוע.</p></div>
-   <div class="card"><span class="em">🏠</span><h3>גם לבית</h3><p>קניות, כרטיס לרכבת, משלוח. כותבים הודעה אחת, והעוזר מזמין.</p></div>
+   <div class="card"><span class="em">🏠</span><h3>גם לבית</h3><p>קניות, כרטיס לרכבת, משלוח. כותבים הודעה אחת, והעוזר מכין הזמנה לאישור שלכם.</p></div>
   </div>
  </div>
 </section>
@@ -274,24 +278,25 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
   <div class="grid g2">
    <div class="card tool feat"><div class="nm">Grok Bot <i></i></div><span class="tg">צוות עוזרים משלכם</span><p>בוטים עם שם, תפקיד וזיכרון, שעובדים על מחשב משלהם בענן, עם דפדפן וקבצים. סוגרים את הטלפון או את המחשב, והם ממשיכים.</p>
     <ul class="uc">
-     <li>מראים לו פעם אחת תהליך של כמה שלבים. הוא שומר אותו ומריץ אותו לבד, לפי לוח זמנים.</li>
-     <li>מכין טיוטות ומחכה. שום דבר לא נשלח בלי האישור שלכם.</li>
+     <li>מראים פעם אחת, והוא עושה לבד כל שבוע.</li>
+     <li>מכין טיוטות ומחכה לאישור.</li>
+     <li>זוכר איך אתם עובדים.</li>
+    </ul>
+    <details class="more"><summary>עוד יכולות +</summary>
+    <ul class="uc">
      <li>כמה בוטים במקביל: אחד אוסף מידע, השני מכין טיוטות, והם מעבירים משימות זה לזה.</li>
      <li>מדברים איתו בכתב, בהכתבה או בשיחה קולית, מהמחשב או מהנייד.</li>
      <li>עובד גם באתרים שאין להם חיבור מוכן, דרך הדפדפן, כמו שאתם עובדים.</li>
-     <li>זוכר מה אתם אוהבים ואיך אתם עובדים, וכל משימה נבנית על הקודמת.</li>
-    </ul></div>
-   <div class="card tool"><div class="nm">Instinct <i></i></div><span class="tg">בהודעה או בשיחת טלפון</span><p>בלי אפליקציה חדשה ובלי ללמוד כלום. כותבים לו הודעה או מתקשרים, והוא משתמש בטלפון ובמחשב כמו שאתם עושים.</p>
+    </ul></details></div>
+   <div class="card tool"><div class="nm">Instinct <i></i></div><span class="tg">בהודעה או בשיחת טלפון</span><p>עוזר שכותבים לו כמו לחבר. אומרים לו מה צריך, והוא מסדר את זה.</p>
     <ul class="uc">
      <li>מזמין את המצרכים למתכון חדש.</li>
-     <li>מזמין כרטיס רכבת הביתה לסוף השבוע.</li>
-     <li>מזמין קניות ושולח פרחים לחבר.</li>
+     <li>מזמין כרטיס רכבת ליום ראשון בבוקר.</li>
     </ul></div>
-   <div class="card tool"><div class="nm">Dots <i></i></div><span class="tg">של <span class="ltr">OpenAI</span></span><p>עוזר שתמיד דולק, עם מחשב משלו בענן. נותנים לו מטרה, והוא מתקדם לבד, שולח עדכונים ושואל כשצריך.</p>
+   <div class="card tool"><div class="nm">Dots <i></i></div><span class="tg">של <span class="ltr">OpenAI</span></span><p>עוזר של <span class="ltr">OpenAI</span> שמקבל מטרה ומתקדם אליה לבד, עם עדכונים בדרך.</p>
     <ul class="uc">
-     <li>כותבים לו או מתקשרים אליו ב-<span class="ltr">ChatGPT</span>, וגם ב-<span class="ltr">Slack</span> וב-<span class="ltr">Teams</span>.</li>
-     <li>יכול לשים לב לדבר ששכחתם, למשל חשבונית, להכין אותו ולחכות לאישור.</li>
-     <li>פותחים את המחשב שלו ורואים בדיוק מה הוא עושה.</li>
+     <li>נותנים לו מטרה, והוא שולח עדכונים בדרך.</li>
+     <li>מכין דברים ומחכה לאישור שלכם לפני שהם יוצאים.</li>
     </ul></div>
    <div class="card tool lock"><span class="lk">🤫</span><div><h3>ועוד הפתעה אחת</h3><p>כלי נוסף שנחשוף רק בסדנה.</p></div></div>
   </div>

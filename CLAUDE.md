@@ -71,3 +71,9 @@ Repo must stay clean: page files only. **No secrets, no API keys, nothing about 
 - Workshop hour not set yet.
 - Price after 28.10 not set yet.
 - Only one ad is shown (`ad-magazine.webp`); the second ad was removed by the owner. The ad says "להרשמה: בקישור שבכיתוב" (meant for social posts, slightly off on a landing page). Ask the owner for a new version if needed; don't edit the images.
+
+## QA decisions (v9, Oct 2026)
+- Tool cards: only verified claims. Instinct per instinct.com; Dots trimmed (no Slack/Teams, calling, "always on", "open its computer") until verified on OpenAI's page.
+- Grok Bot card: 3 outcome bullets, rest behind `<details class="more">עוד יכולות +`.
+- Home card: assistant prepares an order for approval, never orders by itself. Train example: "ליום ראשון בבוקר".
+- Unchanged by Asher's decision: hosts (English titles only, no Hebrew bios), hour, price, ad, surprise card, H1, chat demo, CTA.
