@@ -153,6 +153,15 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
 .steps li{padding:13px 62px 13px 16px;font-weight:700;font-size:17px;min-height:58px;display:flex;align-items:center}
 .steps li:before{top:50%;transform:translateY(-50%)}
 .pay-frame iframe{height:972px;margin-top:-72px}
+.ads{padding:34px 0 40px}
+.ads-row{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -20px;padding:4px 20px 8px}
+.ads-row::-webkit-scrollbar{display:none}
+.ad{flex:0 0 78%;scroll-snap-align:center;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 50px -24px rgba(0,0,0,.8);background:#0c1f22;display:block}
+.ad img{width:100%;height:auto;aspect-ratio:9/16}
+.ads-dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
+.ads-dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25);transition:all .2s}
+.ads-dots i.on{background:var(--gold);width:22px;border-radius:4px}
+.host .t1.he{direction:rtl}
 /* sticky cta */
 .sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:20;transform:translateY(140%);transition:transform .25s}
 .sticky.on{transform:none}
@@ -175,6 +184,10 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
  .host{grid-template-columns:150px 1fr}
  .host .ph{width:150px;height:174px}
  .sticky{display:none}
+ .ads{padding:56px 0}
+ .ads-row{justify-content:center;overflow:visible;margin:0;padding:0;gap:28px}
+ .ad{flex:0 0 340px}
+ .ads-dots{display:none}
  .hero .value{display:table}
  .faq-wrap{max-width:760px}
 }
@@ -201,7 +214,7 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
     <div class="value"><span class="nw">שעתיים חיות</span> · <span class="nw">הדגמות מהעבודה האמיתית</span> · <span class="nw">כללי בטיחות</span> · <span class="nw">רעיונות למחר</span></div>
     <a class="btn" href="#pay" data-cta>להרשמה 👈</a>
     <div class="hosts-mini">
-     <span class="av"><img src="assets/asher.webp" alt="" width="44" height="44"><img src="assets/chaim.webp" alt="" width="44" height="44"></span>
+     <span class="av"><img src="assets/asher-ad.webp" alt="" width="44" height="44"><img src="assets/chaim-ad.webp" alt="" width="44" height="44"></span>
      <span>עם <b>אשר שיף</b> ו<b>חיים אבלס</b></span>
     </div>
    </div>
@@ -218,6 +231,17 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
   </div>
  </div>
 </header>
+
+
+<section class="ads" id="ads" aria-label="מודעות הסדנה">
+ <div class="wrap">
+  <div class="ads-row" id="adsRow">
+   <a class="ad" href="#pay" data-cta><img src="assets/ad-v10.webp" alt="מודעת הסדנה: Grok Bot, העוזר האישי שפונה אליך ראשון. אשר שיף וחיים אבלס" width="720" height="1280" fetchpriority="low"></a>
+   <a class="ad" href="#pay" data-cta><img src="assets/ad-magazine.webp" alt="מודעת הסדנה: Grok Bot. פחות לבקש, יותר לקבל בחזרה. אשר שיף וחיים אבלס" width="720" height="1280" loading="lazy"></a>
+  </div>
+  <div class="ads-dots" aria-hidden="true"><i class="on"></i><i></i></div>
+ </div>
+</section>
 
 <section class="alt" id="for">
  <div class="wrap">
@@ -263,11 +287,11 @@ footer{padding:26px 0 100px;text-align:center;color:#7f8cb0;font-size:13px;borde
   <p class="lead">שני אנשי פיתוח תוכנה, שמסבירים בשפה פשוטה.</p>
   <div class="grid g2">
    <div class="card host">
-    <div class="ph"><img src="assets/asher.webp" alt="אשר שיף" width="480" height="556" loading="lazy"></div>
-    <div><h3>אשר שיף</h3><div class="t1">Software Developer</div><div class="t2">Founder, Chiff AI</div><p>בונה בוטים ואוטומציות, ועובד עם עוזרי AI כל יום.</p></div>
+    <div class="ph"><img src="assets/asher-ad.webp" alt="אשר שיף" width="290" height="336" loading="lazy"></div>
+    <div><h3>אשר שיף</h3><div class="t1 he">מפתח תוכנה</div><div class="t2">Founder, Chiff AI</div><p>בונה בוטים ואוטומציות, ועובד עם עוזרי AI כל יום.</p></div>
    </div>
    <div class="card host">
-    <div class="ph"><img src="assets/chaim.webp" alt="חיים אבלס" width="480" height="556" loading="lazy"></div>
+    <div class="ph"><img src="assets/chaim-ad.webp" alt="חיים אבלס" width="290" height="336" loading="lazy"></div>
     <div><h3>חיים אבלס</h3><div class="t1">Software Tech Lead</div><div class="t2">Software Development Lecturer</div><p>מוביל צוותי פיתוח ומלמד פיתוח תוכנה.</p></div>
    </div>
   </div>
@@ -334,6 +358,8 @@ const st=document.getElementById('sticky'),hero=document.querySelector('.hero'),
 let hv=true,pv=false;const up=()=>st.classList.toggle('on',!hv&&!pv);
 new IntersectionObserver(e=>{hv=e[0].isIntersecting;up()}).observe(hero);
 new IntersectionObserver(e=>{pv=e[0].isIntersecting;up()},{rootMargin:'0px 0px 200px 0px'}).observe(pay);
+const ar=document.getElementById('adsRow'),dd=document.querySelectorAll('.ads-dots i');
+ar.addEventListener('scroll',()=>{const i=Math.abs(ar.scrollLeft)>ar.clientWidth*0.3?1:0;dd.forEach((d,k)=>d.classList.toggle('on',k===i))},{passive:true});
 </script>
 </body>
 </html>
