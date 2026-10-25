@@ -2,7 +2,7 @@
 
 ## What this is
 A single static Hebrew (RTL) landing page for a live Zoom workshop by **Chiff AI (שיף AI)** about **AI personal assistants**.
-It sells registration (99 ₪ early bird), collects registrant details into a Google Sheet, and takes payment through an embedded Invoice4U iframe.
+It sells registration (99 ₪ early bird) and takes payment through an embedded Invoice4U iframe. Registrant data comes only from Invoice4U (no form of our own, no Google Sheet).
 Live: https://captain-automation.github.io/chiff-ai-workshop-2-11/
 
 ## Structure
@@ -10,16 +10,13 @@ Live: https://captain-automation.github.io/chiff-ai-workshop-2-11/
 index.html            the whole page: inline CSS + inline JS, no build step, no framework
 .nojekyll             tells GitHub Pages to serve files as-is
 assets/
-  ad-v10.webp, ad-magazine.webp   the two workshop ads. Use as-is, don't redesign.
-  asher-ad.webp, chaim-ad.webp    host portraits (cropped from ad-v10)
+  ad-magazine.webp                the workshop ad (the only one shown). Use as-is, don't redesign.
+  asher-ad.webp, chaim-ad.webp    host portraits (cropped from the original ad artwork)
   og.jpg                          1200x630 social preview (WhatsApp / Facebook)
   rubik-*.woff2                   body font (Rubik variable, Hebrew + Latin)
   logo-chiff.woff2, logo-ai.woff2 subset fonts for the CSS logo
-setup/
-  Code.gs        Google Apps Script web app: receives the form and appends to sheet "נרשמים"
-  SETUP-HE.md    simple Hebrew setup steps for the owner (non-technical)
 ```
-Page sections, in order: hero (logo, h1, price, CTA, chat demo) → `#ads` (swipe gallery) → `#for` → `#learn` → `#tools` → `#hosts` → `#details` → `#faq` → `#pay` (registration form → payment iframe) → footer, plus a sticky mobile CTA.
+Page sections, in order: hero (logo, h1, price, CTA, chat demo) → `#ads` (one ad, centered) → `#for` → `#learn` → `#tools` → `#hosts` → `#details` → `#faq` → `#pay` (price, value line, payment iframe, backup button) → footer, plus a sticky mobile CTA.
 
 ## Preview
 ```
@@ -27,19 +24,12 @@ python3 -m http.server 8000     # then open http://localhost:8000
 ```
 Always check mobile first (390px wide) and desktop (1280px). Don't leave horizontal scroll.
 
-## The two constants (top of the `<script>` in index.html)
-- `PAYMENT_URL`: the Invoice4U payment link. Used by the iframe and by the backup button "לא נטען? לתשלום בחלון נפרד" (opens in a new tab). Change it **only** here.
-- `SHEET_URL`: the Apps Script web app URL (ends with `/exec`). Empty = the form is skipped silently.
+## The payment constant (top of the `<script>` in index.html)
+- `PAYMENT_URL`: the Invoice4U payment link. Used by the iframe and by the backup button "לא נטען? לתשלום בחלון נפרד" (opens in a new tab, sits right under the iframe). Change it **only** here.
 
-## Registration flow (`#pay`)
-1. Form: full name, Israeli mobile (normalized to `05XXXXXXXX`; accepts +972 / 972 / dashes / spaces), email, and an **unchecked**, optional marketing-consent checkbox (Israeli anti-spam law: explicit opt-in, never pre-checked, never required).
-2. Submit → `fetch(SHEET_URL, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON})`.
-   Payload: `{id, name, phone, email, consent:'yes'|'no', source, userAgent}`.
-3. Then the payment iframe is revealed and scrolled into view. **Never block a sale**: if `SHEET_URL` is empty, the request fails, or it times out (6s), payment still opens.
-4. Fields are kept in `localStorage` (`chiffReg`). A returning visitor who already submitted sees the payment step directly.
-5. Invoice4U's page has a fixed 72px grey top gap; it is trimmed with `.pay-frame iframe{height:972px;margin-top:-72px}` inside an `overflow:hidden` card. Keep it.
-
-After changing `setup/Code.gs`, the owner must redeploy: Deploy → Manage deployments → edit → New version (same URL).
+## Payment section (`#pay`)
+- The Invoice4U iframe shows directly. There is no registration form before it (owner's decision: rely only on Invoice4U data for now).
+- Invoice4U's page has a fixed 72px grey top gap; it is trimmed with `.pay-frame iframe{height:972px;margin-top:-72px}` inside an `overflow:hidden` card. Keep it.
 
 ## Deploy
 Push to `main`. GitHub Pages serves the repo root. Live within ~1 minute; check with `?v=123` to bypass cache.
@@ -73,8 +63,7 @@ Repo must stay clean: page files only. **No secrets, no API keys, nothing about 
 - Exact hour: **TBD**. Don't write one until the owner gives it.
 
 ## Open items
-- Invoice4U product currently shows **₪1**, "רכישת קורס AI", "בונים עתיד" (test setup). Must become 99 ₪ with the right name before promotion. Fixed in Invoice4U, not in this repo.
+- Invoice4U product (as of 25.10) shows ₪99, "סדנת עוזרי AI אישיים", header "בונים עתיד". The price after 28.10 must be changed in Invoice4U, not in this repo.
 - Workshop hour not set yet.
 - Price after 28.10 not set yet.
-- The ads say "Software Developer" for Asher (fine) and "להרשמה: בקישור שבכיתוב" (meant for social posts, slightly off on a landing page). Ask the owner for a new version if needed; don't edit the images.
-- `SHEET_URL` is empty until the owner finishes `setup/SETUP-HE.md`.
+- Only one ad is shown (`ad-magazine.webp`); the second ad was removed by the owner. The ad says "להרשמה: בקישור שבכיתוב" (meant for social posts, slightly off on a landing page). Ask the owner for a new version if needed; don't edit the images.
