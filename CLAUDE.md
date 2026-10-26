@@ -3,14 +3,14 @@
 ## What this is
 A single static Hebrew (RTL) landing page for a live Zoom workshop by **Chiff AI (שיף AI)** about **AI personal assistants**.
 It sells registration (99 ₪ early bird) and takes payment through an embedded Invoice4U iframe. Registrant data comes only from Invoice4U (no form of our own, no Google Sheet).
-Live: https://captain-automation.github.io/chiff-ai-workshop-2-11/
+Live: https://chiff-ai-workshop.netlify.app/ (also /workshop). Backup: https://captain-automation.github.io/chiff-ai-workshop-2-11/
 
 ## Structure
 ```
 index.html            the whole page: inline CSS + inline JS, no build step, no framework
 .nojekyll             tells GitHub Pages to serve files as-is
 netlify.toml          Netlify config: no build, publish ".", /workshop alias, security + cache headers, hides repo docs
-DEPLOY-NETLIFY-HE.md  simple Hebrew steps for the owner: Netlify account, connect repo, buy domain, DNS, HTTPS
+DEPLOY-NETLIFY-HE.md  Hebrew steps for the owner (domain part is not in use: owner chose no custom domain)
 assets/
   ad-magazine.webp                the workshop ad (the only one shown). Use as-is, don't redesign.
   asher-ad.webp, chaim-ad.webp    host portraits (cropped from the original ad artwork)
@@ -34,8 +34,9 @@ Always check mobile first (390px wide) and desktop (1280px). Don't leave horizon
 - Invoice4U's page has a fixed 72px grey top gap; it is trimmed with `.pay-frame iframe{height:972px;margin-top:-72px}` inside an `overflow:hidden` card. Keep it.
 
 ## Deploy
-Push to `main`. GitHub Pages serves the repo root. Live within ~1 minute; check with `?v=123` to bypass cache.
-Moving to Netlify (same repo, same `main`, auto-deploy on push) with a custom domain; owner steps in `DEPLOY-NETLIFY-HE.md`. Domain not bought yet (candidates: chiff-ai.co.il + chiffai.co.il, page also at `/workshop`). When it is live: update `og:url`, `og:image`, add canonical, and the Live URL above. Keep GitHub Pages up at least until after 2.11.
+Push to `main`. Netlify (project `chiff-ai-workshop`) auto-deploys from `main` via a deploy key + GitHub webhook; GitHub Pages also serves the repo root as a backup. Live within ~1 minute; check with `?v=123` to bypass cache.
+No custom domain (owner's decision, 26.10): the address is `chiff-ai-workshop.netlify.app`, used in `og:url`, `og:image` and canonical. Keep GitHub Pages up at least until after 2.11.
+Netlify treats `/workshop` and `/workshop/` as the same path: never add a slash redirect between them (it loops).
 The CSP in `netlify.toml` allows only self + inline; adding analytics or a pixel means adding its domains there. `frame-src` stays `https:` so the payment iframe is never blocked.
 Repo must stay clean: page files only. **No secrets, no API keys, nothing about other projects.**
 

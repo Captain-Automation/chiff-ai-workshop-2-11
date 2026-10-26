@@ -4,12 +4,12 @@
   command = ""
 
 # The workshop page also lives at /workshop (e.g. chiff-ai.co.il/workshop).
-# Relative asset paths ("assets/...") only resolve from /workshop without a trailing slash.
+# Netlify matches /workshop and /workshop/ as the same path, so no slash redirect (it loops).
+# From /workshop/ the relative "assets/..." paths resolve to /workshop/assets/..., served here.
 [[redirects]]
-  from = "/workshop/"
-  to = "/workshop"
-  status = 301
-  force = true
+  from = "/workshop/assets/*"
+  to = "/assets/:splat"
+  status = 200
 
 [[redirects]]
   from = "/workshop"
