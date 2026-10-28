@@ -86,4 +86,4 @@ Repo must stay clean: page files only. **No secrets, no API keys, nothing about 
 - Required: the page sells a service to the public. Keep: skip link, `<main id="main">`, one h1, visible `:focus-visible` (gold), decorative emoji `aria-hidden`, hidden sticky CTA is `inert`, reduced-motion support, new-window link announced.
 - Text contrast at least 4.5:1 (the red deadline pill is `#d13438` for that reason; `#e5484d` failed).
 - Built-in accessibility menu (`#a11y-btn` / `#a11y-panel`), no external widget. Contrast filter goes on header/main/footer, never on body (a filter on body breaks the fixed elements).
-- Accessibility statement page (`accessibility.html`, linked from the footer) is pending the owner's contact details for accessibility requests.
+- Accessibility statement: `accessibility.html` (linked from the footer and the accessibility menu), contact = owner's email and phone given for this purpose. Update its date when the page changes in a way that affects accessibility.
