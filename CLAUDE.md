@@ -13,11 +13,11 @@ netlify.toml          Netlify config: no build, publish ".", /workshop alias, se
 DEPLOY-NETLIFY-HE.md  Hebrew steps for the owner (domain part is not in use: owner chose no custom domain)
 assets/
   asher-ad.webp, chaim-ad.webp    host portraits (cropped from the original ad artwork)
-  og.jpg                          1200x630 social preview (WhatsApp / Facebook)
+  og.jpg                          1200x630 social preview (WhatsApp / Facebook); referenced as og.jpg?v=N, bump N when it changes
   rubik-*.woff2                   body font (Rubik variable, Hebrew + Latin)
   logo-chiff.woff2, logo-ai.woff2 subset fonts for the CSS logo
 ```
-Page sections, in order: hero (logo, h1, price, CTA, chat demo) → `#for` → `#learn` → `#tools` → `#hosts` → `#details` → `#faq` → `#pay` (price, value line, payment iframe, backup button) → footer, plus a sticky mobile CTA.
+Page sections, in order: hero (logo, h1, tool pills, price + red deadline pill, CTA, chat demo) → `#for` → `#uses` (9 everyday use cases, generic, no tool claims) → `#learn` → `#tools` → `#hosts` → `#details` → `#faq` → `#pay` (price, value line, payment iframe, backup button) → footer, plus a sticky mobile CTA.
 
 ## Preview
 ```
@@ -43,7 +43,8 @@ Repo must stay clean: page files only. **No secrets, no API keys, nothing about 
 - Brand name is said "שיף" (never "צ'יף"/"Chief").
 - Logo is CSS/HTML, not an image: "Chiff" in Open Sans 700 + a rounded gold badge "AI" in Roboto Slab 800.
 - Show the logo **once** on the page, with the tagline under it: **"שיף AI: פיתוח תוכנה, בוטים ואוטומציות"**. Don't use older, longer taglines.
-- Palette: navy `#0a1838` / `#11255a`, gold `#e8b64c` / `#f6d48a`, text `#e9eefb`, muted `#b4c0de`. Font: Rubik.
+- Look matches the owner's promo video and status ad (repo `captain-automation/chiff-ai-workshop`, branch `claude/hopeful-bell-v8iffp`, `workshops/2026-11-04-personal-assistants/`): black-teal background with teal glow, gold gradient text, gold-outlined pills, red deadline pill.
+- Palette: bg `#0b1517` / `#10242a`, teal `#14444c`, gold `#e8b64c` / `#f6d48a` (gradient `--gg`), text `#eef1ee`, muted `#a9b9b9`, red `#e5484d`. Font: Rubik.
 - Position Asher first as a software developer who deeply understands technology. Avoid cheap generic "for businesses" sales talk.
 
 ## Content rules
@@ -62,14 +63,14 @@ Repo must stay clean: page files only. **No secrets, no API keys, nothing about 
 - Hebrew name + English titles only. **No Hebrew title lines and no bio paragraphs** in the host cards (owner's decision; the section lead already says they're software people).
 
 ## Facts
-- Monday 2.11, in the evening ("בערב"), on Zoom, 2 hours.
-- 99 ₪ early-bird price until Wednesday 28.10.
+- Wednesday 4.11, in the evening ("בערב"), on Zoom, 2 hours. (Moved from Monday 2.11; the promo video and ad are the source of truth.)
+- 99 ₪ early-bird price until Saturday night 31.10 at midnight ("מוצאי שבת בחצות").
 - Exact hour: **TBD**. Don't write one until the owner gives it.
 
 ## Open items
-- Invoice4U product (as of 25.10) shows ₪99, "סדנת עוזרי AI אישיים", header "בונים עתיד". The price after 28.10 must be changed in Invoice4U, not in this repo.
+- Invoice4U product (as of 25.10) shows ₪99, "סדנת עוזרי AI אישיים", header "בונים עתיד". The price after 31.10 must be changed in Invoice4U, not in this repo.
 - Workshop hour not set yet.
-- Price after 28.10 not set yet.
+- Price after 31.10 not set yet.
 - No ad image on the page (owner removed the ad section, 28.10). Don't add one back unless asked.
 
 ## QA decisions (v9, Oct 2026)
