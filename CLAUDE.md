@@ -81,3 +81,9 @@ Repo must stay clean: page files only. **No secrets, no API keys, nothing about 
 - H1 is plural: "עוזרי AI אישיים / שעושים בשבילכם את העבודה", sub says we cover several kinds of assistants and you'll know which fits you.
 - Chat demo looks like a real messaging app (header with Grok Bot, bubbles with times and ticks, input bar). It is still marked "המחשה".
 - Page always opens at the top: scroll restoration off, any #hash stripped on load, CTAs scroll to #pay without adding #pay to the URL.
+
+## Accessibility (IS 5568 / WCAG 2.0 AA)
+- Required: the page sells a service to the public. Keep: skip link, `<main id="main">`, one h1, visible `:focus-visible` (gold), decorative emoji `aria-hidden`, hidden sticky CTA is `inert`, reduced-motion support, new-window link announced.
+- Text contrast at least 4.5:1 (the red deadline pill is `#d13438` for that reason; `#e5484d` failed).
+- Built-in accessibility menu (`#a11y-btn` / `#a11y-panel`), no external widget. Contrast filter goes on header/main/footer, never on body (a filter on body breaks the fixed elements).
+- Accessibility statement page (`accessibility.html`, linked from the footer) is pending the owner's contact details for accessibility requests.
