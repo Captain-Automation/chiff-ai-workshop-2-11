@@ -12,13 +12,12 @@ index.html            the whole page: inline CSS + inline JS, no build step, no 
 netlify.toml          Netlify config: no build, publish ".", /workshop alias, security + cache headers, hides repo docs
 DEPLOY-NETLIFY-HE.md  Hebrew steps for the owner (domain part is not in use: owner chose no custom domain)
 assets/
-  ad-magazine.webp                the workshop ad (the only one shown). Use as-is, don't redesign.
   asher-ad.webp, chaim-ad.webp    host portraits (cropped from the original ad artwork)
   og.jpg                          1200x630 social preview (WhatsApp / Facebook)
   rubik-*.woff2                   body font (Rubik variable, Hebrew + Latin)
   logo-chiff.woff2, logo-ai.woff2 subset fonts for the CSS logo
 ```
-Page sections, in order: hero (logo, h1, price, CTA, chat demo) → `#ads` (one ad, centered) → `#for` → `#learn` → `#tools` → `#hosts` → `#details` → `#faq` → `#pay` (price, value line, payment iframe, backup button) → footer, plus a sticky mobile CTA.
+Page sections, in order: hero (logo, h1, price, CTA, chat demo) → `#for` → `#learn` → `#tools` → `#hosts` → `#details` → `#faq` → `#pay` (price, value line, payment iframe, backup button) → footer, plus a sticky mobile CTA.
 
 ## Preview
 ```
@@ -71,7 +70,7 @@ Repo must stay clean: page files only. **No secrets, no API keys, nothing about 
 - Invoice4U product (as of 25.10) shows ₪99, "סדנת עוזרי AI אישיים", header "בונים עתיד". The price after 28.10 must be changed in Invoice4U, not in this repo.
 - Workshop hour not set yet.
 - Price after 28.10 not set yet.
-- Only one ad is shown (`ad-magazine.webp`); the second ad was removed by the owner. The ad says "להרשמה: בקישור שבכיתוב" (meant for social posts, slightly off on a landing page). Ask the owner for a new version if needed; don't edit the images.
+- No ad image on the page (owner removed the ad section, 28.10). Don't add one back unless asked.
 
 ## QA decisions (v9, Oct 2026)
 - Tool cards: only verified claims. Instinct per instinct.com; Dots trimmed (no Slack/Teams, calling, "always on", "open its computer") until verified on OpenAI's page.
