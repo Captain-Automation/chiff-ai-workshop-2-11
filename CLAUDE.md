@@ -63,18 +63,21 @@ Repo must stay clean: page files only. **No secrets, no API keys, nothing about 
 - Hebrew name + English titles only. **No Hebrew title lines and no bio paragraphs** in the host cards (owner's decision; the section lead already says they're software people).
 
 ## Facts
-- Wednesday 4.11, in the evening ("בערב"), on Zoom, 2 hours. (Moved from Monday 2.11; the promo video and ad are the source of truth.)
-- 99 ₪ early-bird price until Saturday night 31.10 at midnight ("מוצאי שבת בחצות").
-- Exact hour: **TBD**. Don't write one until the owner gives it.
+- Wednesday 4.11, 20:00 to 22:00 (write "20:00 עד 22:00", no dash), on Zoom, 2 hours. (Moved from Monday 2.11; the promo video and ad are the source of truth.)
+- 99 ₪ early-bird instead of 139 ₪ (save 40 ₪) until Saturday night 31.10 at midnight ("מוצאי שבת בחצות"). Shown as 99 + struck 139 + red pill.
 
 ## Open items
 - Invoice4U product (as of 25.10) shows ₪99, "סדנת עוזרי AI אישיים", header "בונים עתיד". The price after 31.10 must be changed in Invoice4U, not in this repo.
-- Workshop hour not set yet.
-- Price after 31.10 not set yet.
+- Price after 31.10 is 139 ₪: change it in Invoice4U on Saturday night.
 - No ad image on the page (owner removed the ad section, 28.10). Don't add one back unless asked.
 
 ## QA decisions (v9, Oct 2026)
 - Tool cards: only verified claims. Instinct per instinct.com; Dots trimmed (no Slack/Teams, calling, "always on", "open its computer") until verified on OpenAI's page.
 - Grok Bot card: 3 outcome bullets, rest behind `<details class="more">עוד יכולות +`.
 - Home card: assistant prepares an order for approval, never orders by itself. Train example: "ליום ראשון בבוקר".
-- Unchanged by Asher's decision: hosts (English titles only, no Hebrew bios), hour, price, ad, surprise card, H1, chat demo, CTA.
+- Unchanged by Asher's decision: hosts (English titles only, no Hebrew bios), hour, price, ad, surprise card, CTA.
+
+## Decisions 28.10
+- H1 is plural: "עוזרי AI אישיים / שעושים בשבילכם את העבודה", sub says we cover several kinds of assistants and you'll know which fits you.
+- Chat demo looks like a real messaging app (header with Grok Bot, bubbles with times and ticks, input bar). It is still marked "המחשה".
+- Page always opens at the top: scroll restoration off, any #hash stripped on load, CTAs scroll to #pay without adding #pay to the URL.
