@@ -16,6 +16,38 @@
   to = "/index.html"
   status = 200
 
+# Partner links: /a and /b show the same page; the page picks that partner's
+# Invoice4U link from PARTNER_PAY in index.html. Same slash note as /workshop.
+[[redirects]]
+  from = "/a/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/a/accessibility.html"
+  to = "/accessibility.html"
+  status = 200
+
+[[redirects]]
+  from = "/a"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/b/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/b/accessibility.html"
+  to = "/accessibility.html"
+  status = 200
+
+[[redirects]]
+  from = "/b"
+  to = "/index.html"
+  status = 200
+
 # Repo docs are not part of the site.
 [[redirects]]
   from = "/CLAUDE.md"

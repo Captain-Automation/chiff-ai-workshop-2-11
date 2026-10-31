@@ -28,6 +28,14 @@ Always check mobile first (390px wide) and desktop (1280px). Don't leave horizon
 ## The payment constant (top of the `<script>` in index.html)
 - `PAYMENT_URL`: the Invoice4U payment link. Used by the iframe and by the backup button "לא נטען? לתשלום בחלון נפרד" (opens in a new tab, sits right under the iframe). Change it **only** here.
 
+## Partner links (influencers, commission by sales)
+- `PARTNER_PAY` (right under `PAYMENT_URL`): code → that partner's own Invoice4U product link. Sales are counted per product in Invoice4U.
+- Visitor opens `/a` or `?ref=a` → iframe + both pay buttons use that partner's link. Unknown or no code → `PAYMENT_URL`. Only codes in the list are used (never a URL from the address bar).
+- No memory: attribution is only by the link the visitor came in on (owner's decision, 31.10).
+- Current codes: `a` = f0a625cd..., `b` = 50f16478... (placeholder codes; rename in both `PARTNER_PAY` and `netlify.toml`).
+- A new code needs a list entry and three rewrites in `netlify.toml` (`/x`, `/x/assets/*`, `/x/accessibility.html`). GitHub Pages backup supports only `?ref=`.
+- Price change on 31.10 night must be done in **all three** Invoice4U products.
+
 ## Payment section (`#pay`)
 - The Invoice4U iframe shows directly. There is no registration form before it (owner's decision: rely only on Invoice4U data for now).
 - Invoice4U's page has a fixed 72px grey top gap; it is trimmed with `.pay-frame iframe{height:972px;margin-top:-72px}` inside an `overflow:hidden` card. Keep it.
