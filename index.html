@@ -462,10 +462,10 @@ body.a-still *{transition:none!important;animation:none!important;scroll-behavio
 <script>
 // ===== קישור התשלום: מחליפים כאן בלבד =====
 const PAYMENT_URL = "https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-payment?ProductGuid=d04bc8e1-6c1a-46b3-ac0f-34625b7b191b";
-// לינקים של שותפים: /a או ?ref=a בכתובת = הסליקה שלו. קוד חדש מוסיפים כאן וגם ב-netlify.toml
+// לינקים של שותפים: /yona או ?ref=yona בכתובת = הסליקה שלו. קוד חדש מוסיפים כאן וגם ב-netlify.toml
 const PARTNER_PAY = {
-  a: "https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-payment?ProductGuid=f0a625cd-c590-4b87-94e4-46acfd09b195",
-  b: "https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-payment?ProductGuid=50f16478-f8d0-454b-a73a-8fadc056b7df"
+  yona: "https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-payment?ProductGuid=f0a625cd-c590-4b87-94e4-46acfd09b195",
+  bespace: "https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-payment?ProductGuid=50f16478-f8d0-454b-a73a-8fadc056b7df"
 };
 // ==========================================
 const REF=(new URLSearchParams(location.search).get('ref')||location.pathname.split('/').filter(Boolean)[0]||'').toLowerCase();

@@ -30,9 +30,9 @@ Always check mobile first (390px wide) and desktop (1280px). Don't leave horizon
 
 ## Partner links (influencers, commission by sales)
 - `PARTNER_PAY` (right under `PAYMENT_URL`): code → that partner's own Invoice4U product link. Sales are counted per product in Invoice4U.
-- Visitor opens `/a` or `?ref=a` → iframe + both pay buttons use that partner's link. Unknown or no code → `PAYMENT_URL`. Only codes in the list are used (never a URL from the address bar).
+- Visitor opens `/yona` or `?ref=yona` → iframe + both pay buttons use that partner's link. Unknown or no code → `PAYMENT_URL`. Only codes in the list are used (never a URL from the address bar).
 - No memory: attribution is only by the link the visitor came in on (owner's decision, 31.10).
-- Current codes: `a` = f0a625cd..., `b` = 50f16478... (placeholder codes; rename in both `PARTNER_PAY` and `netlify.toml`).
+- Current codes: `yona` = ר' יונה (f0a625cd...), `bespace` = ביספייס (50f16478...). Rename in both `PARTNER_PAY` and `netlify.toml`.
 - A new code needs a list entry and three rewrites in `netlify.toml` (`/x`, `/x/assets/*`, `/x/accessibility.html`). GitHub Pages backup supports only `?ref=`.
 - Price change on 31.10 night must be done in **all three** Invoice4U products.
 

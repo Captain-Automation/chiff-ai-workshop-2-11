@@ -16,35 +16,35 @@
   to = "/index.html"
   status = 200
 
-# Partner links: /a and /b show the same page; the page picks that partner's
+# Partner links: /yona (ר' יונה) and /bespace (ביספייס) show the same page; the page picks that partner's
 # Invoice4U link from PARTNER_PAY in index.html. Same slash note as /workshop.
 [[redirects]]
-  from = "/a/assets/*"
+  from = "/yona/assets/*"
   to = "/assets/:splat"
   status = 200
 
 [[redirects]]
-  from = "/a/accessibility.html"
+  from = "/yona/accessibility.html"
   to = "/accessibility.html"
   status = 200
 
 [[redirects]]
-  from = "/a"
+  from = "/yona"
   to = "/index.html"
   status = 200
 
 [[redirects]]
-  from = "/b/assets/*"
+  from = "/bespace/assets/*"
   to = "/assets/:splat"
   status = 200
 
 [[redirects]]
-  from = "/b/accessibility.html"
+  from = "/bespace/accessibility.html"
   to = "/accessibility.html"
   status = 200
 
 [[redirects]]
-  from = "/b"
+  from = "/bespace"
   to = "/index.html"
   status = 200
 
