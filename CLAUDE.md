@@ -4,6 +4,7 @@
 The live workshop happened on 4.11. The page now sells its recording (content from the owner's workshop summary).
 - Price: 139 ₪ instead of 199 ₪ until Saturday night 7.11 at midnight; then 199 ₪. `PRICE_UP_AT` in the script switches the page automatically (hides `.early`, sets `.pr` to 199). The real price must be changed in the Invoice4U product too.
 - Sections: hero → `#for` → `#inside` (chapters with timestamps) → `#uses` (examples shown in the recording) → `#moments` → `#learn` (what to do tomorrow + safety) → `#tools` (Grok Bot, Instinct, plus an unnamed phone-calling assistant card) → `#quotes` (hosts' own words) → `#hosts` → `#faq` → `#pay`.
+- `#uses` cards are tagged: "בשידור חי" (shown live: recruiting, email, calendar, phone call, status video) vs "מהניסיון" (only told by the hosts: charges, insurance, bank fees, office split). Keep that split honest (owner, 5.11).
 - Dots is not on the page (it was not shown in the workshop). Tab is still never named.
 - Don't use the summary's "said but not verified" claims. No participant counts.
 - og.jpg v4 has no price or date, so it doesn't go stale.
