@@ -1,5 +1,15 @@
 # CLAUDE.md · דף הנחיתה לסדנת עוזרי AI אישיים (שיף AI)
 
+## Current mode (from 5.11): selling the RECORDING
+The live workshop happened on 4.11. The page now sells its recording (content from the owner's workshop summary).
+- Price: 139 ₪ instead of 199 ₪ until Saturday night 7.11 at midnight; then 199 ₪. `PRICE_UP_AT` in the script switches the page automatically (hides `.early`, sets `.pr` to 199). The real price must be changed in Invoice4U, in **all** products (main + partners).
+- Sections: hero → `#for` → `#inside` (chapters with timestamps) → `#uses` (examples shown in the recording) → `#moments` → `#learn` (what to do tomorrow + safety) → `#tools` (Grok Bot, Instinct, plus an unnamed phone-calling assistant card) → `#quotes` (hosts' own words) → `#hosts` → `#faq` → `#pay`.
+- Dots is not on the page (it was not shown in the workshop). Tab is still never named.
+- Don't use the summary's "said but not verified" claims. No participant counts.
+- og.jpg v4 has no price or date, so it doesn't go stale.
+- Delivery FAQ says a viewing link is sent after payment: confirm with the owner if this changes.
+- Older notes below about the live workshop (date, hour, 99 ₪, Zoom) are history.
+
 ## What this is
 A single static Hebrew (RTL) landing page for a live Zoom workshop by **Chiff AI (שיף AI)** about **AI personal assistants**.
 It sells registration (99 ₪ early bird) and takes payment through an embedded Invoice4U iframe. Registrant data comes only from Invoice4U (no form of our own, no Google Sheet).
