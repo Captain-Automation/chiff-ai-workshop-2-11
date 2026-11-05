@@ -503,7 +503,7 @@ body.a-still *{transition:none!important;animation:none!important;scroll-behavio
   <h2>שאלות <span class="g">נפוצות</span></h2>
   <div style="height:14px"></div>
   <details><summary>צריך ידע במחשבים?</summary><p>לא. חיים מתחיל מאפס, מהורדה והתקנה, ומסביר כל לחיצה. אם אתם יודעים לשלוח הודעה בוואטסאפ, תסתדרו.</p></details>
-  <details><summary>איך מקבלים את ההקלטה?</summary><p>אחרי התשלום נשלח אליכם קישור לצפייה בהקלטה.</p></details>
+  <details><summary>איך מקבלים את ההקלטה?</summary><p>באותו יום נשלח אליכם קישור לצפייה בהקלטה, בגוגל דרייב.</p></details>
   <details><summary>כמה זמן ההקלטה?</summary><p>כשעתיים ורבע. אפשר לעצור, לחזור על שלב ולצפות שוב.</p></details>
   <details><summary>הכלים בעברית?</summary><p>בהקלטה כותבים לעוזרים בעברית, ושומעים גם שיחת טלפון חיה בעברית. חיים אומר בכנות שהעברית בשיחה עוד לא מושלמת, אבל עובדת.</p></details>
   <details><summary>צריך לשלם על הכלים עצמם?</summary><p>חלק מהכלים בתשלום אצל החברה שמפעילה אותם, וחלק חינמיים כרגע. בהקלטה מוסבר מה בתשלום, ואיך מתחילים בזול.</p></details>
@@ -559,14 +559,8 @@ const PRICE_UP_AT = Date.parse("2026-11-07T22:00:00Z"), PRICE_AFTER = "199";
 if(Date.now()>=PRICE_UP_AT){document.body.classList.add('done');document.querySelectorAll('.pr').forEach(e=>e.textContent=PRICE_AFTER)}
 // ===== קישור התשלום: מחליפים כאן בלבד =====
 const PAYMENT_URL = "https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-payment?ProductGuid=d04bc8e1-6c1a-46b3-ac0f-34625b7b191b";
-// לינקים של שותפים: /yona או ?ref=yona בכתובת = הסליקה שלו. קוד חדש מוסיפים כאן וגם ב-netlify.toml
-const PARTNER_PAY = {
-  yona: "https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-payment?ProductGuid=f0a625cd-c590-4b87-94e4-46acfd09b195",
-  bespace: "https://private.invoice4u.co.il/newsite/he/clearing/public/i4u-payment?ProductGuid=50f16478-f8d0-454b-a73a-8fadc056b7df"
-};
 // ==========================================
-const REF=(new URLSearchParams(location.search).get('ref')||location.pathname.split('/').filter(Boolean)[0]||'').toLowerCase();
-const PAY=Object.prototype.hasOwnProperty.call(PARTNER_PAY,REF)?PARTNER_PAY[REF]:PAYMENT_URL;
+const PAY=PAYMENT_URL;
 const f=document.getElementById('payFrame');
 document.getElementById('payBackup').href=PAY;
 document.getElementById('payGo').href=PAY;

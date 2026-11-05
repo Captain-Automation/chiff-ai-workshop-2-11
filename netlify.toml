@@ -16,38 +16,6 @@
   to = "/index.html"
   status = 200
 
-# Partner links: /yona (ר' יונה) and /bespace (ביספייס) show the same page; the page picks that partner's
-# Invoice4U link from PARTNER_PAY in index.html. Same slash note as /workshop.
-[[redirects]]
-  from = "/yona/assets/*"
-  to = "/assets/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/yona/accessibility.html"
-  to = "/accessibility.html"
-  status = 200
-
-[[redirects]]
-  from = "/yona"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/bespace/assets/*"
-  to = "/assets/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/bespace/accessibility.html"
-  to = "/accessibility.html"
-  status = 200
-
-[[redirects]]
-  from = "/bespace"
-  to = "/index.html"
-  status = 200
-
 # Repo docs are not part of the site.
 [[redirects]]
   from = "/CLAUDE.md"

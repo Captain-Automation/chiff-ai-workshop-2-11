@@ -2,12 +2,13 @@
 
 ## Current mode (from 5.11): selling the RECORDING
 The live workshop happened on 4.11. The page now sells its recording (content from the owner's workshop summary).
-- Price: 139 ₪ instead of 199 ₪ until Saturday night 7.11 at midnight; then 199 ₪. `PRICE_UP_AT` in the script switches the page automatically (hides `.early`, sets `.pr` to 199). The real price must be changed in Invoice4U, in **all** products (main + partners).
+- Price: 139 ₪ instead of 199 ₪ until Saturday night 7.11 at midnight; then 199 ₪. `PRICE_UP_AT` in the script switches the page automatically (hides `.early`, sets `.pr` to 199). The real price must be changed in the Invoice4U product too.
 - Sections: hero → `#for` → `#inside` (chapters with timestamps) → `#uses` (examples shown in the recording) → `#moments` → `#learn` (what to do tomorrow + safety) → `#tools` (Grok Bot, Instinct, plus an unnamed phone-calling assistant card) → `#quotes` (hosts' own words) → `#hosts` → `#faq` → `#pay`.
 - Dots is not on the page (it was not shown in the workshop). Tab is still never named.
 - Don't use the summary's "said but not verified" claims. No participant counts.
 - og.jpg v4 has no price or date, so it doesn't go stale.
-- Delivery FAQ says a viewing link is sent after payment: confirm with the owner if this changes.
+- Delivery (owner, 5.11): a Google Drive viewing link is sent the same day.
+- Only the regular Invoice4U product is used (139 ₪, then 199 ₪ from 7.11 midnight).
 - Older notes below about the live workshop (date, hour, 99 ₪, Zoom) are history.
 
 ## What this is
@@ -38,13 +39,8 @@ Always check mobile first (390px wide) and desktop (1280px). Don't leave horizon
 ## The payment constant (top of the `<script>` in index.html)
 - `PAYMENT_URL`: the Invoice4U payment link. Used by the iframe and by the backup button "לא נטען? לתשלום בחלון נפרד" (opens in a new tab, sits right under the iframe). Change it **only** here.
 
-## Partner links (influencers, commission by sales)
-- `PARTNER_PAY` (right under `PAYMENT_URL`): code → that partner's own Invoice4U product link. Sales are counted per product in Invoice4U.
-- Visitor opens `/yona` or `?ref=yona` → iframe + both pay buttons use that partner's link. Unknown or no code → `PAYMENT_URL`. Only codes in the list are used (never a URL from the address bar).
-- No memory: attribution is only by the link the visitor came in on (owner's decision, 31.10).
-- Current codes: `yona` = ר' יונה (f0a625cd...), `bespace` = ביספייס (50f16478...). Rename in both `PARTNER_PAY` and `netlify.toml`.
-- A new code needs a list entry and three rewrites in `netlify.toml` (`/x`, `/x/assets/*`, `/x/accessibility.html`). GitHub Pages backup supports only `?ref=`.
-- Price change on 31.10 night must be done in **all three** Invoice4U products.
+## Partner links
+- Removed on 5.11 (owner: no longer relevant). `/yona` and `/bespace` now 404. Only `PAYMENT_URL` is used.
 
 ## Payment section (`#pay`)
 - The Invoice4U iframe shows directly. There is no registration form before it (owner's decision: rely only on Invoice4U data for now).
